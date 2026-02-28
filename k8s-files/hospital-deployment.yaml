@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hospital-deployment
+  namespace: hospital-ns
+  labels:
+    app: hospital
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hospital
+  template:
+    metadata:
+      labels:
+        app: hospital
+    spec:
+      containers:
+      - name: hospital-container
+        image: saurav2059/hospital-web:v1.0.0
+        ports:
+        - containerPort: 80

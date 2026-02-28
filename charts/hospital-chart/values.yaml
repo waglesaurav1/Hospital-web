@@ -1,0 +1,21 @@
+####### deployment 
+
+hospital:
+  namespace: hospital-ns
+  app: hospital
+  replicas: 3
+  container: 
+    name: hospital-container
+    image: saurav2059/hospital-web
+    tag: v1.0.0
+    containerPort: 80
+
+
+######### service ###
+
+svc:
+  type: LoadBalancer
+  port: 3130
+  targetPort: 80
+  protocol: TCP
+  app: hospital

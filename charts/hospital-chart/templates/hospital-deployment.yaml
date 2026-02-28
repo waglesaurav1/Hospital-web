@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  namespace: {{ .Values.hospital.namespace }}
+  labels:
+    app: {{ .Values.hospital.app }}
+spec:
+  replicas: {{ .Values.hospital.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.hospital.app }}
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.hospital.app }}
+spec:
+    spec:
+      containers:
+      - name: {{ .Values.hospital.container.name }}
+        image: "{{ .Values.hospital.container.image }}:{{ .Values.hospital.container.tag }}"
+        ports:
+        - containerPort: {{ .Values.hospital.container.containerPort }}
