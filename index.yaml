@@ -3,6 +3,16 @@ entries:
   hospital-app:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-03-02T08:50:54.374887039Z"
+    description: A Helm chart for Kubernetes
+    digest: 1d23c1bab3abae02db2a59705063bea80a07feec18d328fdcd617388a09b4348
+    name: hospital-app
+    type: application
+    urls:
+    - https://github.com/waglesaurav1/Hospital-web/releases/download/hospital-app-1.1.8/hospital-app-1.1.8.tgz
+    version: 1.1.8
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-03-02T04:45:48.6212476Z"
     description: A Helm chart for Kubernetes
     digest: 97f74dc64cefba8694e3aae9450dd65938027c0aadf6c988a498bb5ae9992d7b
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/waglesaurav1/Hospital-web/releases/download/hospital-app-1.1.7/hospital-app-1.1.7.tgz
     version: 1.1.7
-generated: "2026-03-02T04:45:48.621253922Z"
+generated: "2026-03-02T08:50:54.374897889Z"
