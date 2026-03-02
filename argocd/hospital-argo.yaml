@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hospital-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    # GitHub Pages URL (Helm repository)
+    repoURL: https://github.com/waglesaurav1/Hospital-web
+    chart: hospital-app
+    # Deploy latest released chart version
+    targetRevision: master  # it will deploy the latest version of the chart available in the helm repository
+    helm:
+      valueFiles:
+        - values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hospital-ns 
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true 
