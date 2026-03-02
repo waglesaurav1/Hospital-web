@@ -11,7 +11,7 @@ spec:
     repoURL: https://github.com/waglesaurav1/Hospital-web
     path: charts/hospital-chart
     # Deploy latest released chart version
-    targetRevision: main  # it will deploy the latest version of the chart available in the helm repository
+    targetRevision: "*"  # it will deploy the latest version of the chart available in the helm repository
     helm:
       valueFiles:
         - values.yaml
