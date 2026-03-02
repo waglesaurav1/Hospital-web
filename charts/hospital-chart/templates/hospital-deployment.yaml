@@ -10,15 +10,13 @@ spec:
   selector:
     matchLabels:
       app: {{ .Values.hospital.app }}
-spec:
   template:
     metadata:
       labels:
         app: {{ .Values.hospital.app }}
-spec:
     spec:
       containers:
-      - name: {{ .Values.hospital.container.name }}
-        image: "{{ .Values.hospital.container.image }}:{{ .Values.hospital.container.tag }}"
-        ports:
-        - containerPort: {{ .Values.hospital.container.containerPort }}
+        - name: {{ .Values.hospital.container.name }}
+          image: "{{ .Values.hospital.container.image }}:{{ .Values.hospital.container.tag }}"
+          ports:
+            - containerPort: {{ .Values.hospital.container.containerPort }}
